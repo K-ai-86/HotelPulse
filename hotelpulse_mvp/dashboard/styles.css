@@ -1,0 +1,241 @@
+/* ==========================================================
+   HOTELPULSE — CSS CUSTOMIZADO
+   Ajuste as cores aqui em um único lugar.
+   ========================================================== */
+
+:root {
+    --hp-navy: #0f172a;
+    --hp-navy-light: #1e293b;
+    --hp-green: #10b981;
+    --hp-green-bg: #d1fae5;
+    --hp-blue: #3b82f6;
+    --hp-blue-bg: #dbeafe;
+    --hp-purple: #8b5cf6;
+    --hp-purple-bg: #ede9fe;
+    --hp-orange: #f59e0b;
+    --hp-orange-bg: #fef3c7;
+    --hp-red: #ef4444;
+    --hp-gray-text: #64748b;
+    --hp-border: #e2e8f0;
+}
+
+/* Esconde os elementos padrão do Streamlit que não usamos */
+#MainMenu, footer, header[data-testid="stHeader"] {
+    visibility: hidden;
+    height: 0;
+}
+
+.block-container {
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
+    max-width: 1400px;
+}
+
+/* ---------- Sidebar ---------- */
+section[data-testid="stSidebar"] {
+    background-color: var(--hp-navy);
+}
+section[data-testid="stSidebar"] * {
+    color: #e2e8f0 !important;
+}
+section[data-testid="stSidebar"] .hp-logo-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    margin-bottom: 0;
+}
+section[data-testid="stSidebar"] .hp-logo-tagline {
+    font-size: 0.75rem;
+    color: #94a3b8 !important;
+    margin-top: -4px;
+}
+.hp-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background-color: var(--hp-navy-light);
+    font-weight: 600;
+    margin-top: 1rem;
+}
+.hp-hotel-card {
+    border-top: 1px solid #334155;
+    padding-top: 14px;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.hp-hotel-card .hp-hotel-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #ffffff !important;
+}
+.hp-hotel-card .hp-hotel-city {
+    font-size: 0.75rem;
+    color: #94a3b8 !important;
+}
+
+/* ---------- Cards de métrica ---------- */
+.hp-metric-card {
+    background: #ffffff;
+    border: 1px solid var(--hp-border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    height: 100%;
+}
+.hp-metric-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--hp-gray-text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.hp-metric-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+.hp-metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+.hp-metric-delta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 8px;
+}
+.hp-metric-delta.positive { color: var(--hp-green); }
+.hp-metric-delta.negative { color: var(--hp-red); }
+.hp-metric-sub {
+    font-size: 0.75rem;
+    color: var(--hp-gray-text);
+    margin-top: 2px;
+}
+.hp-progress-track {
+    background: #f1f5f9;
+    border-radius: 6px;
+    height: 6px;
+    margin-top: 12px;
+    overflow: hidden;
+}
+.hp-progress-fill {
+    height: 100%;
+    border-radius: 6px;
+}
+
+/* ---------- Painéis genéricos ---------- */
+.hp-panel {
+    background: #ffffff;
+    border: 1px solid var(--hp-border);
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+}
+.hp-panel-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
+.hp-panel-subtitle {
+    font-size: 0.78rem;
+    color: var(--hp-gray-text);
+    margin-bottom: 14px;
+}
+
+/* ---------- Badges ---------- */
+.hp-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+.hp-badge.aumentar { background: var(--hp-green-bg); color: #047857; }
+.hp-badge.manter   { background: #f1f5f9; color: #475569; }
+.hp-badge.reduzir  { background: var(--hp-orange-bg); color: #b45309; }
+.hp-badge.alta     { background: #fee2e2; color: #b91c1c; }
+.hp-badge.media    { background: var(--hp-orange-bg); color: #b45309; }
+.hp-badge.baixa    { background: #f1f5f9; color: #475569; }
+
+/* ---------- Recomendação do dia ---------- */
+.hp-reco-card {
+    background: var(--hp-navy);
+    border-radius: 12px;
+    padding: 20px;
+    color: #ffffff;
+    height: 100%;
+}
+.hp-reco-card .hp-panel-title { color: #ffffff; }
+.hp-reco-highlight {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-radius: 10px;
+    padding: 14px;
+    margin: 14px 0;
+}
+.hp-reco-highlight .label {
+    font-size: 0.75rem;
+    color: #a7f3d0;
+}
+.hp-reco-highlight .value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 2px;
+}
+.hp-checklist-item {
+    font-size: 0.82rem;
+    color: #cbd5e1;
+    margin: 6px 0;
+}
+
+/* ---------- Quote card ---------- */
+.hp-quote-card {
+    background: #ffffff;
+    border: 1px solid var(--hp-border);
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+}
+.hp-quote-text {
+    font-size: 0.92rem;
+    color: #1e293b;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* ---------- Tabelas simples via HTML ---------- */
+.hp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+.hp-table th {
+    text-align: left;
+    color: var(--hp-gray-text);
+    font-weight: 600;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--hp-border);
+    font-size: 0.78rem;
+}
+.hp-table td {
+    padding: 8px;
+    border-bottom: 1px solid #f1f5f9;
+}
+.hp-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
